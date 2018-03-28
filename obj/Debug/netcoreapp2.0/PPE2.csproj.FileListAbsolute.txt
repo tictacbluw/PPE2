@@ -1,0 +1,10 @@
+C:\Users\me\Documents\ppe2\PPE2\obj\Debug\netcoreapp2.0\PPE2.csproj.CoreCompileInputs.cache
+C:\Users\me\Documents\ppe2\PPE2\obj\Debug\netcoreapp2.0\PPE2.AssemblyInfoInputs.cache
+C:\Users\me\Documents\ppe2\PPE2\obj\Debug\netcoreapp2.0\PPE2.AssemblyInfo.cs
+C:\Users\me\Documents\ppe2\PPE2\bin\Debug\netcoreapp2.0\PPE2.deps.json
+C:\Users\me\Documents\ppe2\PPE2\bin\Debug\netcoreapp2.0\PPE2.runtimeconfig.json
+C:\Users\me\Documents\ppe2\PPE2\bin\Debug\netcoreapp2.0\PPE2.runtimeconfig.dev.json
+C:\Users\me\Documents\ppe2\PPE2\bin\Debug\netcoreapp2.0\PPE2.dll
+C:\Users\me\Documents\ppe2\PPE2\bin\Debug\netcoreapp2.0\PPE2.pdb
+C:\Users\me\Documents\ppe2\PPE2\obj\Debug\netcoreapp2.0\PPE2.dll
+C:\Users\me\Documents\ppe2\PPE2\obj\Debug\netcoreapp2.0\PPE2.pdb
