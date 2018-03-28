@@ -33,25 +33,13 @@ public static string getMoisSuivant(DateTime date){
 public static bool entre(int jour1, int jour2){
    DateTime date = DateTime.Now;
    int jour = date.Day;
-   if (jour1 < jour && jour < jour2)
-   {
-       return true;
-   }
-   else{
-       return false;
-   }
+   return checkEstDansInterval(jour1,jour2,jour);
 }
 
 
 public static bool entre(int jour1, int jour2, DateTime date){
    int jour = date.Day;
-   if (jour1 < jour && jour < jour2)
-   {
-       return true;
-   }
-   else{
-       return false;
-   }
+   return checkEstDansInterval(jour1,jour2,jour);
 }
 
 private static string format(int mois){
@@ -60,6 +48,17 @@ private static string format(int mois){
        result = "0"+mois.ToString();
    }
    return result;
+}
+
+
+private static bool checkEstDansInterval(int start, int end, int value){
+   if (start < value && value < end)
+   {
+       return true;
+   }
+   else{
+       return false;
+   }
 }
 
 }
