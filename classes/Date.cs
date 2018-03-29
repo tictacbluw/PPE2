@@ -148,7 +148,7 @@ private static string format(int mois){
 /// Retourne  Vrai ou Faux
 /// </returns>
 private static bool checkEstDansInterval(int start, int end, int value){
-   if (start < value && value < end)
+   if (start <= value && value <= end)
    {
        return true;
    }
