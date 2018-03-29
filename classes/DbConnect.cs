@@ -181,7 +181,7 @@ public void Delete(string table, string clause){
 /// <summary>
 /// Select des données dans une table
 /// </summary>
-///<param name="data">données à selectionner (exemple: id,name </param>
+///<param name="data">champs à selectionner </param>
 ///<param name="table"> Table dans laquelle select les données </param>
 ///<param name="clause">clause (exemple: WHERE id=2)</param>
 /// <returns>
@@ -195,6 +195,7 @@ public DataTable Select(string data, string table, string clause){
         if(reader.Read()){
             result.Load(reader);
         }
+        reader.Close();
     }
     this.Disconnect();
      Console.WriteLine(query);

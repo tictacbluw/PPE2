@@ -25,13 +25,15 @@ namespace PPE2
                 moisPrecedent = "0000";
                 Console.WriteLine(moisPrecedent);
                 DataTable test = database.Select("*","fichefrais","");
-                Console.WriteLine(test.ToString());
+                int i = 0;
                 foreach (DataRow row in test.Rows)
                 {
-
+                    i++;
                      Console.WriteLine(row["idetat"]);
-
+                    Console.WriteLine(row["idvisiteur"]);
+                    Console.WriteLine(row["montantvalide"]);
                 }
+             Console.WriteLine(i);
             }
         }
     }

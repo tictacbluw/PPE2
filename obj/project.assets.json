@@ -1378,11 +1378,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\me\\Documents\\ppe2\\PPE2\\PPE2.csproj",
+      "projectUniqueName": "C:\\Users\\me\\Documents\\ppe2\\ppe2\\PPE2.csproj",
       "projectName": "PPE2",
-      "projectPath": "C:\\Users\\me\\Documents\\ppe2\\PPE2\\PPE2.csproj",
+      "projectPath": "C:\\Users\\me\\Documents\\ppe2\\ppe2\\PPE2.csproj",
       "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\me\\Documents\\ppe2\\PPE2\\obj\\",
+      "outputPath": "C:\\Users\\me\\Documents\\ppe2\\ppe2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
