@@ -19,11 +19,11 @@ using MySql.Data.MySqlClient;
 public class DbConnect {
 
 
-private static string serveur = "s18538332.domainepardefaut.fr" ;
+private static string serveur = " ;
 
-private static string bdd = "gsb_frais";
-private static string utilisateur = "userGsb";
-private static string mdp = "secret";
+private static string bdd = ";
+private static string utilisateur = ";
+private static string mdp = ";
 
 private static DbConnect maConnection = null;
 private static  MySqlConnection conn =null;
