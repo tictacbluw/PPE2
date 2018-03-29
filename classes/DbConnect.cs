@@ -19,14 +19,30 @@ using MySql.Data.MySqlClient;
 public class DbConnect {
 
 
-private static string serveur = "s18538332.domainepardefaut.fr" ;
+private static string serveur = "" ;
 
-private static string bdd = "gsb_frais";
-private static string utilisateur = "userGsb";
-private static string mdp = "secret";
+private static string bdd = "";
+private static string utilisateur = "";
+private static string mdp = "";
 
-
+private static DbConnect maConnection = null;
 private static  MySqlConnection conn =null;
+
+
+private DbConnect(){
+    Connect();
+}
+
+
+public static DbConnect GetConnect(){
+    if (maConnection ==null)
+    {
+       maConnection = new DbConnect();
+    }
+
+    return maConnection;
+}
+
 
 /*
     Se connecte à la base de données
@@ -38,7 +54,8 @@ private static  MySqlConnection conn =null;
 /// Retourne Vrai si la connection à la BDD a réussie sinon faux 
 /// </returns>
 
-public bool Connect() {
+
+private bool Connect() {
     try {
         SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         builder.DataSource = serveur;
@@ -165,9 +182,9 @@ public DataTable Select(string data, string table, string clause){
         }
     }
     this.Disconnect();
+     Console.WriteLine(query);
     return result;
 }
-
 
 
 

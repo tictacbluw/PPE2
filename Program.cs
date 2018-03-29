@@ -11,20 +11,26 @@ namespace PPE2
         static void Main(string[] args)
         {
             Console.WriteLine("Lancement du programme!");
-            DbConnect abc = new DbConnect();
-            abc.Connect();
-            Dictionary <string, string> data = new Dictionary<string, string>();
-            data.Add("nom","Doe");
-            data.Add("prenom","John");
-            data.Add("login","TESTLOGIN");
-            data.Add("mdp","TESTMDP");
-            data.Add("idCompte","1");
-            DataTable test = abc.Select("nom, prenom","utilisateur", "WHERE idCompte=1");
-            foreach (DataRow row in test.Rows)
-            {
-                foreach (var item in row.ItemArray)
+            DbConnect database = DbConnect.GetConnect();
+            DateTime maintenant = DateTime.Now;
+            
+            if(Date.entre(1,10,maintenant) == true){
+                Console.WriteLine("Nous sommes entre le 1 et 10!");
+                string moisPrecedent = Date.getMoisPrecedent(maintenant);
+
+            }
+            else{
+                Console.WriteLine("Nous ne sommes pas entre le 1 et 10!");
+                string moisPrecedent = DateTime.Now.Year.ToString() + Date.getMoisPrecedent(maintenant);
+                moisPrecedent = "0000";
+                Console.WriteLine(moisPrecedent);
+                DataTable test = database.Select("*","fichefrais","");
+                Console.WriteLine(test.ToString());
+                foreach (DataRow row in test.Rows)
                 {
-                    Console.WriteLine(item);
+
+                     Console.WriteLine(row["idetat"]);
+
                 }
             }
         }
