@@ -19,21 +19,36 @@ using MySql.Data.MySqlClient;
 public class DbConnect {
 
 
-private static string serveur = "" ;
+private static string serveur = "s18538332.domainepardefaut.fr" ;
 
-private static string bdd = "";
-private static string utilisateur = "";
-private static string mdp = "";
+private static string bdd = "gsb_frais";
+private static string utilisateur = "userGsb";
+private static string mdp = "secret";
 
 private static DbConnect maConnection = null;
 private static  MySqlConnection conn =null;
 
-
+/*
+    Constructeur privé, crée l'instance qui sera sollicitée pour
+    toutes les méthodes de la classe
+*/
+/// <summary>
+/// Constructeur privé, crée l'instance qui sera sollicitée pour
+/// toutes les méthodes de la classe
+/// </summary>
 private DbConnect(){
     Connect();
 }
 
-
+/*
+    Fonction statique qui crée l'unique instance de la classe
+*/
+/// <summary>
+/// Fonction statique qui crée l'unique instance de la classe
+/// </summary>
+/// <returns>
+/// Retournel'unique instance de la classe 
+/// </returns>
 public static DbConnect GetConnect(){
     if (maConnection ==null)
     {
