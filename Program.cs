@@ -10,30 +10,23 @@ namespace PPE2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Lancement du programme!");
             DbConnect database = DbConnect.GetConnect();
             DateTime maintenant = DateTime.Now;
-            
+            string moisPrecedent = DateTime.Now.Year.ToString() + Date.getMoisPrecedent(maintenant);
             if(Date.entre(1,10,maintenant) == true){
-                Console.WriteLine("Nous sommes entre le 1 et 10!");
-                string moisPrecedent = Date.getMoisPrecedent(maintenant);
+                Dictionary <string, string> tmp = new Dictionary <string, string>();
+                tmp.Add("idetat","CR");
+                database.Update("fichefrais",tmp,"WHERE mois='"+moisPrecedent+"'");
 
             }
-            else{
-                Console.WriteLine("Nous ne sommes pas entre le 1 et 10!");
-                string moisPrecedent = DateTime.Now.Year.ToString() + Date.getMoisPrecedent(maintenant);
-                moisPrecedent = "0000";
-                Console.WriteLine(moisPrecedent);
-                DataTable test = database.Select("*","fichefrais","");
-                int i = 0;
-                foreach (DataRow row in test.Rows)
-                {
-                    i++;
-                     Console.WriteLine(row["idetat"]);
-                    Console.WriteLine(row["idvisiteur"]);
-                    Console.WriteLine(row["montantvalide"]);
-                }
-             Console.WriteLine(i);
+            if(Date.entre(20,31,maintenant) == true){
+                Dictionary <string, string> tmp = new Dictionary <string, string>();
+                tmp.Add("idetat","RB");
+                database.Update("fichefrais",tmp,"WHERE mois='"+moisPrecedent+"'");
+
+
+
+             
             }
         }
     }

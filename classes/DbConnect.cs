@@ -144,10 +144,10 @@ public void Insert(string table,Dictionary <string, string> data){
 ///<param name="clause">clause (exemple: WHERE id=2)</param>
 public void Update(string table,Dictionary <string, string> data, string clause){
     string values = "";
-    string query = "INSERT INTO "+table+" SET ";
+    string query = "UPDATE "+table+" SET ";
     foreach (KeyValuePair<string, string> entry in data)
     {
-        values += entry.Key+"="+entry.Value+", ";
+        values += entry.Key+"='"+entry.Value+"', ";
     }
     values = values.Substring(0,values.Length-2);
     query += values+" "+clause;
@@ -189,16 +189,11 @@ public void Delete(string table, string clause){
 /// </returns>
 public DataTable Select(string data, string table, string clause){
     string query = "SELECT "+data+" from "+table+" "+clause;
-    DataTable result = new DataTable();
     MySqlCommand sql = new MySqlCommand(query,conn);
-    using (MySqlDataReader reader = sql.ExecuteReader()){
-        if(reader.Read()){
-            result.Load(reader);
-        }
-        reader.Close();
-    }
+    MySqlDataReader reader = sql.ExecuteReader();
+    DataTable result = new DataTable();
+    result.Load(reader);   
     this.Disconnect();
-     Console.WriteLine(query);
     return result;
 }
 
