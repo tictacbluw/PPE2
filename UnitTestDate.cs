@@ -65,8 +65,8 @@ namespace ppe2
         [Fact]
         public void TestCheckEstDansInterval()
         {
-           int a = new Random().Next(1, 99);
-           Assert.True(Date.checkEstDansInterval(1,99,a));
+           int a = new Random().Next();
+           Assert.True(Date.checkEstDansInterval(a-1,a+1,a));
         }
         
     }
