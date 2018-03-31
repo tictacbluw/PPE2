@@ -22,7 +22,7 @@ namespace PPE2
             if(Date.entre(20,31,maintenant) == true){
                 Dictionary <string, string> tmp = new Dictionary <string, string>();
                 tmp.Add("idetat","RB");
-                database.Update("fichefrais",tmp,"WHERE mois='"+moisPrecedent+"'");
+                database.Update("fichefrais",tmp,"WHERE mois='"+moisPrecedent+"' AND idetat='VA'");
 
 
 
