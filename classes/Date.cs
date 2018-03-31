@@ -124,10 +124,17 @@ public static bool entre(int jour1, int jour2, DateTime date){
 /// <returns>
 /// Retourne string le mois donnée en paramètre sous la forme MM 
 /// </returns>
-private static string format(int mois){
+public static string format(int mois){
+    if(mois > 12){
+        mois = mois -12;
+    }
     string result = "";
    if( mois <10){
        result = "0"+mois.ToString();
+   }
+   else{
+
+       result = mois.ToString();
    }
    return result;
 }
@@ -147,7 +154,7 @@ private static string format(int mois){
 /// <returns>
 /// Retourne  Vrai ou Faux
 /// </returns>
-private static bool checkEstDansInterval(int start, int end, int value){
+public static bool checkEstDansInterval(int start, int end, int value){
    if (start <= value && value <= end)
    {
        return true;
